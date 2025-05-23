@@ -119,22 +119,22 @@
     let noPadding = 20;
 
     const joinTexts = [
-      "우리와 함께 해줄래?😊",
+      "우리와 함께 할래?😊",
       "다들 널 기다리고 있어!🥰",
       "함께 즐거운 추억을 쌓자😎",
       "맛있는 것도 먹으러 가자!🔥",
       "같이 시원한 맥주 한잔 어때?🍻",
-      "널 코치해줄 조규성(temu)도 기다리고 있어!🏃",
-      "좋게 얘기할 때 들어와"
+      "널 코치해줄 조규성(temu)도<br>기다리고 있어!🏃",
+      "좋게 얘기할 때 들어와 ㅋㅋ"
     ];
 
-    document.getElementById('joinText').textContent = joinTexts[0];
+    document.getElementById('joinText').innerHTML = joinTexts[0];
 
     function handleNo() {
       count++;
 
       if (count < joinTexts.length) {
-        document.getElementById('joinText').textContent = joinTexts[count];
+        document.getElementById('joinText').innerHTML = joinTexts[count];
         document.getElementById('hero').style.backgroundImage = `url('images/img${count + 1}.jpeg')`;
 
         yesFontSize += 0.2;
