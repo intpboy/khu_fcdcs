@@ -17,31 +17,39 @@
     }
     .hero {
       background: url('images/img1.jpeg') no-repeat center center/cover;
-      min-height: 100svh; /* ✅ 모바일 대응: Safe Viewport Height */
+      min-height: 100svh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: white;
-      text-shadow: 1px 1px 3px black;
-      text-align: center;
-      padding-top: 50vh; /* ✅ 중앙 정렬 보정 */
       padding-bottom: 50px;
+      text-align: center;
       transition: background-image 0.3s ease;
+    }
+    .content-box {
+      background-color: rgba(255, 255, 240, 0.9); /* 아이보리 배경 */
+      padding: 40px 30px;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      max-width: 90%;
+      width: 600px;
+      margin-top: 5vh; /* ✅ 박스 위치 아래로 */
     }
     h1 {
       font-size: 3.4rem;
-      margin-bottom: 30px;
+      color: black;
+      margin-bottom: 40px;
     }
     .buttons {
       display: flex;
       gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     button {
-      font-size: 1.4rem;
-      padding: 16px 32px;
+      font-size: 1.6rem;
+      padding: 20px 40px;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
       cursor: pointer;
       transition: all 0.2s ease;
     }
@@ -60,42 +68,49 @@
       background-color: #c0392b;
     }
 
-    /* 📱 모바일 반응형 스타일 */
     @media (max-width: 600px) {
       h1 {
         font-size: 2.8rem;
-        padding: 0 24px;
+        padding: 0 20px;
       }
 
       .buttons {
         flex-direction: column;
-        gap: 18px;
+        gap: 15px;
       }
 
       button {
         font-size: 1.8rem;
-        padding: 20px 40px;
-        width: 85%;
+        padding: 24px 48px;
+        width: 100%;
         max-width: 360px;
+      }
+
+      .content-box {
+        padding: 30px 20px;
+        border-radius: 20px;
+        margin-top: 8vh; /* 모바일에서도 약간 더 아래 */
       }
     }
   </style>
 </head>
 <body>
   <div class="hero" id="hero">
-    <h1 id="joinText"></h1>
-    <div class="buttons">
-      <button id="yesBtn" class="yes" onclick="window.location.href='https://forms.gle/AUML527d92zZdgF56'">Yes</button>
-      <button id="noBtn" class="no" onclick="handleNo()">No</button>
+    <div class="content-box">
+      <h1 id="joinText"></h1>
+      <div class="buttons">
+        <button id="yesBtn" class="yes" onclick="window.location.href='https://forms.gle/AUML527d92zZdgF56'">Yes</button>
+        <button id="noBtn" class="no" onclick="handleNo()">No</button>
+      </div>
     </div>
   </div>
 
   <script>
     let count = 0;
-    let yesFontSize = 1.4;
-    let yesPadding = 16;
-    let noFontSize = 1.4;
-    let noPadding = 16;
+    let yesFontSize = 1.6;
+    let yesPadding = 20;
+    let noFontSize = 1.6;
+    let noPadding = 20;
 
     const joinTexts = [
       "우리와 함께 해줄래?😊",
@@ -107,7 +122,6 @@
       "좋게 얘기할 때 들어와"
     ];
 
-    // 초기 텍스트 설정
     document.getElementById('joinText').textContent = joinTexts[0];
 
     function handleNo() {
