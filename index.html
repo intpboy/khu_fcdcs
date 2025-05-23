@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>귀살대 가입신청</title>
-  <!-- Google Fonts: Noto Sans KR + Poppins -->
+  <!-- 예쁜 글꼴 -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -19,40 +19,45 @@
       background: url('images/img1.jpeg') no-repeat center center/cover;
       min-height: 100svh;
       display: flex;
-      justify-content: center;
+      justify-content: center; /* 세로 정렬 중앙 기준 */
       align-items: center;
       padding-bottom: 50px;
       text-align: center;
       transition: background-image 0.3s ease;
     }
+
     .content-box {
-      background-color: rgba(255, 255, 240, 0.9); /* 아이보리 배경 */
-      padding: 40px 30px;
-      border-radius: 24px;
+      background-color: rgba(255, 255, 240, 0.9); /* 📌 아이보리색 박스, 불투명도 0~1 조정 */
+      padding: 20px 20px;  /* 📌 박스 안 여백: 위아래 좌우 */
+      border-radius: 24px; /* 📌 박스 모서리 둥글기 (24px~50px까지 조정 가능) */
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      max-width: 90%;
-      width: 600px;
-      margin-top: 5vh; /* ✅ 박스 위치 아래로 */
+      max-width: 90%;      /* 📌 전체 화면에서 최대 너비 비율 */
+      width: 1000px;        /* 📌 박스 기본 너비 - 500~700px 정도로 바꿔보세요 */
+      margin-top: 70vh;     /* 📌 박스 위치 조절용: vh 값을 키우면 아래로 내려갑니다 */
     }
+
     h1 {
       font-size: 3.4rem;
       color: black;
       margin-bottom: 40px;
     }
+
     .buttons {
       display: flex;
       gap: 20px;
       justify-content: center;
       flex-wrap: wrap;
     }
+
     button {
       font-size: 1.6rem;
-      padding: 20px 40px;
+      padding: 20px 40px;     /* 📌 버튼 크기 조절 (높이, 가로폭) */
       border: none;
       border-radius: 12px;
       cursor: pointer;
       transition: all 0.2s ease;
     }
+
     .yes {
       background-color: #2ecc71;
       color: white;
@@ -60,6 +65,7 @@
     .yes:hover {
       background-color: #27ae60;
     }
+
     .no {
       background-color: #e74c3c;
       color: white;
@@ -89,7 +95,7 @@
       .content-box {
         padding: 30px 20px;
         border-radius: 20px;
-        margin-top: 8vh; /* 모바일에서도 약간 더 아래 */
+        margin-top: 8vh; /* 📱 모바일에서 박스를 좀 더 아래로 조정 */
       }
     }
   </style>
